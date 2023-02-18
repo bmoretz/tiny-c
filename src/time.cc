@@ -1,11 +1,25 @@
 #include <stdio.h>
 #include <time.h>
 
+const int EPOCH_OFFSET = 1900;
+
 int main(int argc, char *argv[]) {
     time_t now;
+    struct tm *clock;
 
     time(&now);
+    clock = localtime(&now);
 
-    printf("The computer think it's %ld\n", now);
-    printf("%s", ctime(&now));
+    puts("Time details:");
+    
+    printf("  Day of the year: %d\n", clock->tm_yday);
+    printf("  Day of the week: %d\n", clock->tm_wday);
+    printf("             Year: %d\n", clock->tm_year + EPOCH_OFFSET);
+    printf("             Month: %d\n", clock->tm_mon);
+    printf("  Day of the month: %d\n", clock->tm_mday);
+    printf("              Hour: %d\n", clock->tm_hour);
+    printf("            Minute: %d\n", clock->tm_min);
+    printf("            Second: %d\n", clock->tm_sec);
+
+    return(0);
 }

@@ -59,6 +59,68 @@ build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
 build edit_cache: phony CMakeFiles/edit_cache.util
 
 # =============================================================================
+# Object build statements for EXECUTABLE target pithy
+
+
+#############################################
+# Order-only phony target for pithy
+
+build cmake_object_order_depends_target_pithy: phony || CMakeFiles/pithy.dir
+
+build CMakeFiles/pithy.dir/pithy.cc.o: CXX_COMPILER__pithy_Debug /home/brandon/workspace/c/tiny-c/src/pithy.cc || cmake_object_order_depends_target_pithy
+  DEP_FILE = CMakeFiles/pithy.dir/pithy.cc.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/pithy.dir
+  OBJECT_FILE_DIR = CMakeFiles/pithy.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target pithy
+
+
+#############################################
+# Link the executable pithy
+
+build pithy: CXX_EXECUTABLE_LINKER__pithy_Debug CMakeFiles/pithy.dir/pithy.cc.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/pithy.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = pithy
+  TARGET_PDB = pithy.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target moon_phase
+
+
+#############################################
+# Order-only phony target for moon_phase
+
+build cmake_object_order_depends_target_moon_phase: phony || CMakeFiles/moon_phase.dir
+
+build CMakeFiles/moon_phase.dir/moon_phase.cc.o: CXX_COMPILER__moon_phase_Debug /home/brandon/workspace/c/tiny-c/src/moon_phase.cc || cmake_object_order_depends_target_moon_phase
+  DEP_FILE = CMakeFiles/moon_phase.dir/moon_phase.cc.o.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/moon_phase.dir
+  OBJECT_FILE_DIR = CMakeFiles/moon_phase.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target moon_phase
+
+
+#############################################
+# Link the executable moon_phase
+
+build moon_phase: CXX_EXECUTABLE_LINKER__moon_phase_Debug CMakeFiles/moon_phase.dir/moon_phase.cc.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/moon_phase.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = moon_phase
+  TARGET_PDB = moon_phase.dbg
+
+# =============================================================================
 # Object build statements for EXECUTABLE target time
 
 
@@ -131,7 +193,7 @@ build greetings: CXX_EXECUTABLE_LINKER__greetings_Debug CMakeFiles/greetings.dir
 #############################################
 # Folder: /home/brandon/workspace/c/tiny-c/build
 
-build all: phony time greetings
+build all: phony pithy moon_phase time greetings
 
 # =============================================================================
 # Built-in targets

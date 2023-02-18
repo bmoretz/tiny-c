@@ -6,10 +6,11 @@
       {
         "type": "shell",
         "label": "clang build active file",
-        "command": "/usr/bin/clang",
+        "command": "clang",
         "args": [
           "-Wall",
           "-g",
+          "-c",
           "${file}",
           "-o",
           "${workspaceFolder}/bin/${fileBasenameNoExtension}"

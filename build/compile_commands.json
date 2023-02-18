@@ -1,6 +1,16 @@
 [
 {
   "directory": "/home/brandon/workspace/c/tiny-c/build",
+  "command": "/usr/bin/clang++-15 -g -o CMakeFiles/pithy.dir/pithy.cc.o -c /home/brandon/workspace/c/tiny-c/src/pithy.cc",
+  "file": "/home/brandon/workspace/c/tiny-c/src/pithy.cc"
+},
+{
+  "directory": "/home/brandon/workspace/c/tiny-c/build",
+  "command": "/usr/bin/clang++-15 -g -o CMakeFiles/moon_phase.dir/moon_phase.cc.o -c /home/brandon/workspace/c/tiny-c/src/moon_phase.cc",
+  "file": "/home/brandon/workspace/c/tiny-c/src/moon_phase.cc"
+},
+{
+  "directory": "/home/brandon/workspace/c/tiny-c/build",
   "command": "/usr/bin/clang++-15 -g -o CMakeFiles/time.dir/time.cc.o -c /home/brandon/workspace/c/tiny-c/src/time.cc",
   "file": "/home/brandon/workspace/c/tiny-c/src/time.cc"
 },
