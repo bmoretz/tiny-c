@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/brandon/workspace/c/tiny-c/build",
+  "command": "/usr/bin/clang++-15 -g -o CMakeFiles/time.dir/time.cc.o -c /home/brandon/workspace/c/tiny-c/src/time.cc",
+  "file": "/home/brandon/workspace/c/tiny-c/src/time.cc"
+},
+{
+  "directory": "/home/brandon/workspace/c/tiny-c/build",
+  "command": "/usr/bin/clang++-15 -g -o CMakeFiles/greetings.dir/greetings.cc.o -c /home/brandon/workspace/c/tiny-c/src/greetings.cc",
+  "file": "/home/brandon/workspace/c/tiny-c/src/greetings.cc"
+}
+]
