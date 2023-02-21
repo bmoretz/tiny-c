@@ -1,5 +1,2 @@
 .cache
-bin
-/**/*.o
-/**/CMakeFiles
-/**/.cmake
+build
