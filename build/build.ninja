@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/brandon/workspace/c/tiny-c/build && /usr/bin/cmake --regenerate-during-build -S/home/brandon/workspace/c/tiny-c/src -B/home/brandon/workspace/c/tiny-c/build
+  COMMAND = cd /home/brandon/workspace/c/tiny-c/build && /usr/bin/cmake --regenerate-during-build -S/home/brandon/workspace/c/tiny-c -B/home/brandon/workspace/c/tiny-c/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -51,7 +51,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/brandon/workspace/c/tiny-c/build && /usr/bin/cmake-gui -S/home/brandon/workspace/c/tiny-c/src -B/home/brandon/workspace/c/tiny-c/build
+  COMMAND = cd /home/brandon/workspace/c/tiny-c/build && /usr/bin/cmake-gui -S/home/brandon/workspace/c/tiny-c -B/home/brandon/workspace/c/tiny-c/build
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -67,11 +67,11 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_pithy: phony || CMakeFiles/pithy.dir
 
-build CMakeFiles/pithy.dir/pithy.cc.o: CXX_COMPILER__pithy_Debug /home/brandon/workspace/c/tiny-c/src/pithy.cc || cmake_object_order_depends_target_pithy
-  DEP_FILE = CMakeFiles/pithy.dir/pithy.cc.o.d
-  FLAGS = -g
+build CMakeFiles/pithy.dir/src/pithy.c.o: C_COMPILER__pithy_Debug ../src/pithy.c || cmake_object_order_depends_target_pithy
+  DEP_FILE = CMakeFiles/pithy.dir/src/pithy.c.o.d
+  FLAGS = -g   -std=c_std_11 -std=c11 -Wall -pedantic
   OBJECT_DIR = CMakeFiles/pithy.dir
-  OBJECT_FILE_DIR = CMakeFiles/pithy.dir
+  OBJECT_FILE_DIR = CMakeFiles/pithy.dir/src
 
 
 # =============================================================================
@@ -81,7 +81,7 @@ build CMakeFiles/pithy.dir/pithy.cc.o: CXX_COMPILER__pithy_Debug /home/brandon/w
 #############################################
 # Link the executable pithy
 
-build pithy: CXX_EXECUTABLE_LINKER__pithy_Debug CMakeFiles/pithy.dir/pithy.cc.o
+build pithy: C_EXECUTABLE_LINKER__pithy_Debug CMakeFiles/pithy.dir/src/pithy.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/pithy.dir
   POST_BUILD = :
@@ -98,11 +98,11 @@ build pithy: CXX_EXECUTABLE_LINKER__pithy_Debug CMakeFiles/pithy.dir/pithy.cc.o
 
 build cmake_object_order_depends_target_moon_phase: phony || CMakeFiles/moon_phase.dir
 
-build CMakeFiles/moon_phase.dir/moon_phase.cc.o: CXX_COMPILER__moon_phase_Debug /home/brandon/workspace/c/tiny-c/src/moon_phase.cc || cmake_object_order_depends_target_moon_phase
-  DEP_FILE = CMakeFiles/moon_phase.dir/moon_phase.cc.o.d
-  FLAGS = -g
+build CMakeFiles/moon_phase.dir/src/moon_phase.c.o: C_COMPILER__moon_phase_Debug ../src/moon_phase.c || cmake_object_order_depends_target_moon_phase
+  DEP_FILE = CMakeFiles/moon_phase.dir/src/moon_phase.c.o.d
+  FLAGS = -g   -std=c_std_11 -std=c11 -Wall -pedantic
   OBJECT_DIR = CMakeFiles/moon_phase.dir
-  OBJECT_FILE_DIR = CMakeFiles/moon_phase.dir
+  OBJECT_FILE_DIR = CMakeFiles/moon_phase.dir/src
 
 
 # =============================================================================
@@ -112,7 +112,7 @@ build CMakeFiles/moon_phase.dir/moon_phase.cc.o: CXX_COMPILER__moon_phase_Debug 
 #############################################
 # Link the executable moon_phase
 
-build moon_phase: CXX_EXECUTABLE_LINKER__moon_phase_Debug CMakeFiles/moon_phase.dir/moon_phase.cc.o
+build moon_phase: C_EXECUTABLE_LINKER__moon_phase_Debug CMakeFiles/moon_phase.dir/src/moon_phase.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/moon_phase.dir
   POST_BUILD = :
@@ -129,11 +129,11 @@ build moon_phase: CXX_EXECUTABLE_LINKER__moon_phase_Debug CMakeFiles/moon_phase.
 
 build cmake_object_order_depends_target_time: phony || CMakeFiles/time.dir
 
-build CMakeFiles/time.dir/time.cc.o: CXX_COMPILER__time_Debug /home/brandon/workspace/c/tiny-c/src/time.cc || cmake_object_order_depends_target_time
-  DEP_FILE = CMakeFiles/time.dir/time.cc.o.d
-  FLAGS = -g
+build CMakeFiles/time.dir/src/time.c.o: C_COMPILER__time_Debug ../src/time.c || cmake_object_order_depends_target_time
+  DEP_FILE = CMakeFiles/time.dir/src/time.c.o.d
+  FLAGS = -g   -std=c_std_11 -std=c11 -Wall -pedantic
   OBJECT_DIR = CMakeFiles/time.dir
-  OBJECT_FILE_DIR = CMakeFiles/time.dir
+  OBJECT_FILE_DIR = CMakeFiles/time.dir/src
 
 
 # =============================================================================
@@ -143,13 +143,44 @@ build CMakeFiles/time.dir/time.cc.o: CXX_COMPILER__time_Debug /home/brandon/work
 #############################################
 # Link the executable time
 
-build time: CXX_EXECUTABLE_LINKER__time_Debug CMakeFiles/time.dir/time.cc.o
+build time: C_EXECUTABLE_LINKER__time_Debug CMakeFiles/time.dir/src/time.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/time.dir
   POST_BUILD = :
   PRE_LINK = :
   TARGET_FILE = time
   TARGET_PDB = time.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target local_greet
+
+
+#############################################
+# Order-only phony target for local_greet
+
+build cmake_object_order_depends_target_local_greet: phony || CMakeFiles/local_greet.dir
+
+build CMakeFiles/local_greet.dir/src/local_greet.c.o: C_COMPILER__local_greet_Debug ../src/local_greet.c || cmake_object_order_depends_target_local_greet
+  DEP_FILE = CMakeFiles/local_greet.dir/src/local_greet.c.o.d
+  FLAGS = -g   -std=c_std_11 -std=c11 -Wall -pedantic
+  OBJECT_DIR = CMakeFiles/local_greet.dir
+  OBJECT_FILE_DIR = CMakeFiles/local_greet.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target local_greet
+
+
+#############################################
+# Link the executable local_greet
+
+build local_greet: C_EXECUTABLE_LINKER__local_greet_Debug CMakeFiles/local_greet.dir/src/local_greet.c.o
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles/local_greet.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = local_greet
+  TARGET_PDB = local_greet.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target greetings
@@ -160,11 +191,11 @@ build time: CXX_EXECUTABLE_LINKER__time_Debug CMakeFiles/time.dir/time.cc.o
 
 build cmake_object_order_depends_target_greetings: phony || CMakeFiles/greetings.dir
 
-build CMakeFiles/greetings.dir/greetings.cc.o: CXX_COMPILER__greetings_Debug /home/brandon/workspace/c/tiny-c/src/greetings.cc || cmake_object_order_depends_target_greetings
-  DEP_FILE = CMakeFiles/greetings.dir/greetings.cc.o.d
-  FLAGS = -g
+build CMakeFiles/greetings.dir/src/greetings.c.o: C_COMPILER__greetings_Debug ../src/greetings.c || cmake_object_order_depends_target_greetings
+  DEP_FILE = CMakeFiles/greetings.dir/src/greetings.c.o.d
+  FLAGS = -g   -std=c_std_11 -std=c11 -Wall -pedantic
   OBJECT_DIR = CMakeFiles/greetings.dir
-  OBJECT_FILE_DIR = CMakeFiles/greetings.dir
+  OBJECT_FILE_DIR = CMakeFiles/greetings.dir/src
 
 
 # =============================================================================
@@ -174,7 +205,7 @@ build CMakeFiles/greetings.dir/greetings.cc.o: CXX_COMPILER__greetings_Debug /ho
 #############################################
 # Link the executable greetings
 
-build greetings: CXX_EXECUTABLE_LINKER__greetings_Debug CMakeFiles/greetings.dir/greetings.cc.o
+build greetings: C_EXECUTABLE_LINKER__greetings_Debug CMakeFiles/greetings.dir/src/greetings.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/greetings.dir
   POST_BUILD = :
@@ -193,7 +224,7 @@ build greetings: CXX_EXECUTABLE_LINKER__greetings_Debug CMakeFiles/greetings.dir
 #############################################
 # Folder: /home/brandon/workspace/c/tiny-c/build
 
-build all: phony pithy moon_phase time greetings
+build all: phony pithy moon_phase time local_greet greetings
 
 # =============================================================================
 # Built-in targets
@@ -202,14 +233,14 @@ build all: phony pithy moon_phase time greetings
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/brandon/workspace/c/tiny-c/src/CMakeLists.txt /usr/share/cmake-3.18/Modules/CMakeCInformation.cmake /usr/share/cmake-3.18/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.18/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.18/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.18/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.18/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.18/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.18/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.18/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.18/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.18/Modules/Compiler/Clang.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU.cmake /usr/share/cmake-3.18/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.18/Modules/Platform/Linux.cmake /usr/share/cmake-3.18/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.18.4/CMakeCCompiler.cmake CMakeFiles/3.18.4/CMakeCXXCompiler.cmake CMakeFiles/3.18.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt /usr/share/cmake-3.18/Modules/CMakeCInformation.cmake /usr/share/cmake-3.18/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.18/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.18/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.18/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.18/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.18/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.18/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.18/Modules/Compiler/Clang.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU.cmake /usr/share/cmake-3.18/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.18/Modules/Platform/Linux.cmake /usr/share/cmake-3.18/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.18.4/CMakeCCompiler.cmake CMakeFiles/3.18.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/brandon/workspace/c/tiny-c/src/CMakeLists.txt /usr/share/cmake-3.18/Modules/CMakeCInformation.cmake /usr/share/cmake-3.18/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.18/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.18/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.18/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.18/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.18/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.18/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.18/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.18/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.18/Modules/Compiler/Clang.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU.cmake /usr/share/cmake-3.18/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.18/Modules/Platform/Linux.cmake /usr/share/cmake-3.18/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.18.4/CMakeCCompiler.cmake CMakeFiles/3.18.4/CMakeCXXCompiler.cmake CMakeFiles/3.18.4/CMakeSystem.cmake: phony
+build ../CMakeLists.txt /usr/share/cmake-3.18/Modules/CMakeCInformation.cmake /usr/share/cmake-3.18/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.18/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.18/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.18/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.18/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.18/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.18/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.18/Modules/Compiler/Clang.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU.cmake /usr/share/cmake-3.18/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.18/Modules/Platform/Linux.cmake /usr/share/cmake-3.18/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.18.4/CMakeCCompiler.cmake CMakeFiles/3.18.4/CMakeSystem.cmake: phony
 
 
 #############################################

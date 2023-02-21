@@ -8,12 +8,15 @@
         "label": "clang build active file",
         "command": "clang",
         "args": [
+          "-std=c11",
+          "-O0",
           "-Wall",
+          "-pedantic",
           "-g",
           "-c",
           "${file}",
           "-o",
-          "${workspaceFolder}/bin/${fileBasenameNoExtension}"
+          "${workspaceFolder}/build/${fileBasenameNoExtension}"
         ],
         "options": {
           "cwd": "${workspaceFolder}"

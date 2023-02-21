@@ -1,22 +1,27 @@
 [
 {
   "directory": "/home/brandon/workspace/c/tiny-c/build",
-  "command": "/usr/bin/clang++-15 -g -o CMakeFiles/pithy.dir/pithy.cc.o -c /home/brandon/workspace/c/tiny-c/src/pithy.cc",
-  "file": "/home/brandon/workspace/c/tiny-c/src/pithy.cc"
+  "command": "/usr/bin/clang -g   -std=c_std_11 -std=c11 -Wall -pedantic -o CMakeFiles/pithy.dir/src/pithy.c.o -c /home/brandon/workspace/c/tiny-c/src/pithy.c",
+  "file": "/home/brandon/workspace/c/tiny-c/src/pithy.c"
 },
 {
   "directory": "/home/brandon/workspace/c/tiny-c/build",
-  "command": "/usr/bin/clang++-15 -g -o CMakeFiles/moon_phase.dir/moon_phase.cc.o -c /home/brandon/workspace/c/tiny-c/src/moon_phase.cc",
-  "file": "/home/brandon/workspace/c/tiny-c/src/moon_phase.cc"
+  "command": "/usr/bin/clang -g   -std=c_std_11 -std=c11 -Wall -pedantic -o CMakeFiles/moon_phase.dir/src/moon_phase.c.o -c /home/brandon/workspace/c/tiny-c/src/moon_phase.c",
+  "file": "/home/brandon/workspace/c/tiny-c/src/moon_phase.c"
 },
 {
   "directory": "/home/brandon/workspace/c/tiny-c/build",
-  "command": "/usr/bin/clang++-15 -g -o CMakeFiles/time.dir/time.cc.o -c /home/brandon/workspace/c/tiny-c/src/time.cc",
-  "file": "/home/brandon/workspace/c/tiny-c/src/time.cc"
+  "command": "/usr/bin/clang -g   -std=c_std_11 -std=c11 -Wall -pedantic -o CMakeFiles/time.dir/src/time.c.o -c /home/brandon/workspace/c/tiny-c/src/time.c",
+  "file": "/home/brandon/workspace/c/tiny-c/src/time.c"
 },
 {
   "directory": "/home/brandon/workspace/c/tiny-c/build",
-  "command": "/usr/bin/clang++-15 -g -o CMakeFiles/greetings.dir/greetings.cc.o -c /home/brandon/workspace/c/tiny-c/src/greetings.cc",
-  "file": "/home/brandon/workspace/c/tiny-c/src/greetings.cc"
+  "command": "/usr/bin/clang -g   -std=c_std_11 -std=c11 -Wall -pedantic -o CMakeFiles/local_greet.dir/src/local_greet.c.o -c /home/brandon/workspace/c/tiny-c/src/local_greet.c",
+  "file": "/home/brandon/workspace/c/tiny-c/src/local_greet.c"
+},
+{
+  "directory": "/home/brandon/workspace/c/tiny-c/build",
+  "command": "/usr/bin/clang -g   -std=c_std_11 -std=c11 -Wall -pedantic -o CMakeFiles/greetings.dir/src/greetings.c.o -c /home/brandon/workspace/c/tiny-c/src/greetings.c",
+  "file": "/home/brandon/workspace/c/tiny-c/src/greetings.c"
 }
 ]

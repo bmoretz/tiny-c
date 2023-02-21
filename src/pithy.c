@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
   FILE *fp;
   char buffer[BSIZE];
   char *r, *entry;
-  int items, offset;
+  int items = 0, offset;
   char **list_entries;
 
   list_entries = (char **)malloc(sizeof(char *) * 100);

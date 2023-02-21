@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
   time_t now;
 
   time(&now);
-  tm *clock = localtime(&now);
+  struct tm *clock = localtime(&now);
 
   int mp = moon_phase(clock->tm_year, clock->tm_mon, clock->tm_mday);
 

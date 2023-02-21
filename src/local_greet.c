@@ -4,7 +4,6 @@
 int main(int argc, char *argv[]) {
   time_t now;
   struct tm *clock;
-  int hour;
 
   time(&now);
   clock = localtime(&now);
