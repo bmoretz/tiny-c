@@ -4,70 +4,104 @@
 #include <time.h>
 
 const size_t BSIZE = 256;
+const size_t BUFF_INC = 100;
+
+struct list_entries {
+    size_t length;
+    char ** entries;
+};
+
+void read_entries( const char filename[], struct list_entries * list_entries);
+void print_random_entry( const struct list_entries * list_entries);
+void free_list_entries( struct list_entries * list_entries);
 
 int main(int argc, char *argv[]) {
 
   const char filename[] = "../data/pithy_large.txt";
-  FILE *fp;
-  char buffer[BSIZE];
-  char *r, *entry;
-  int items = 0, offset;
-  char **list_entries;
 
-  list_entries = (char **)malloc(sizeof(char *) * 100);
+  struct list_entries le;
 
-  if (list_entries == NULL) {
-    fprintf(stderr, "Unable to allocate memory for list entries.");
-    exit(1);
-  }
+  read_entries( filename, &le );
+  print_random_entry(&le);
+  free_list_entries(&le);
 
-  fp = fopen(filename, "r");
+  return (0);
+}
 
-  if (fp == NULL) {
-    fprintf(stderr, "Unable to open file %s\n", filename);
-    exit(1);
-  }
+void read_entries(const char filename[], struct list_entries * le) {
+    FILE * fp;
 
-  while (!feof(fp)) {
+    fp = fopen(filename, "r");
 
-    if (items % 100 == 0) {
-      list_entries =
-          (char **)realloc(list_entries, sizeof(char *) * (items + 100));
-    }
-
-    if (list_entries == NULL) {
-        fprintf(stderr, "Unable to allocate memory for additional entries.");
+    if (fp == NULL) {
+        fprintf(stderr, "Unable to open file: %s\n", filename);
         exit(1);
     }
 
-    r = fgets(buffer, BSIZE, fp);
+    char buffer[BSIZE];
+    char *result, *entry;
+    char **entries;
 
-    size_t buff_len = strlen(buffer) + 1;
+    entries = (char **) malloc( sizeof( char * ) * BUFF_INC);
 
-    entry = (char *)malloc(sizeof(char) * buff_len);
-
-    if (entry == NULL) {
-      fprintf(stderr, "Unable to allocate memory for entry.");
-      exit(1);
+    if (entries == NULL) {
+        fprintf(stderr, "Unable to allocate initial entries memory: %ld", BUFF_INC);
+        exit(1);
     }
 
-    strcpy(entry, buffer);
+    int length = 0;
 
-    *(list_entries + items) = entry;
+    while( !feof(fp)) {
 
-    items++;
+        if ( length > 0 && (length % BUFF_INC) == 0) {
+            entries =
+                    (char **) realloc(entries,
+                                       sizeof(char *) * (length + BUFF_INC));
+        }
 
-    if (r == NULL) {
-      break;
+        if (entries == NULL) {
+            fprintf(stderr, "Unable to allocate memory for [%ld] additional entries:", BUFF_INC);
+            exit(1);
+        }
+
+        result = fgets(buffer, BSIZE, fp);
+
+        if (result == NULL) {
+            break;
+        }
+
+        size_t buff_size = strlen(result);
+        entry = (char *) malloc(strlen(result));
+
+        if (entry == NULL) {
+            fprintf(stderr, "Unable to allocate memory for buffer: [%ld] bytes", buff_size);
+            exit(1);
+        }
+
+        strcpy(entry, buffer);
+
+        entries[length] = entry;
+
+        length++;
     }
-  }
 
-  fclose(fp);
+    fclose(fp);
 
-  srand( (unsigned) time(NULL));
-  offset = rand() % (items-1);
+    le->length = length;
+    le->entries = entries;
+}
 
-  printf("%s", *(list_entries+offset));
+void print_random_entry(const struct list_entries * le) {
+    srand( (unsigned) time(NULL));
 
-  return (0);
+    int offset = rand() % (le->length - 1);
+    printf("%s", *(le->entries + offset));
+}
+
+void free_list_entries( struct list_entries * le) {
+    for(int idx = 0; idx < le->length; ++idx ) {
+        free(le->entries[idx] );
+    }
+
+    free(le->entries);
 }
